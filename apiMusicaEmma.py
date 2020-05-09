@@ -8,7 +8,7 @@ import os
 #
 
 
-# https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/
+
 
 def tipo():
     buscarAnime= input("Introduce una pelicula para saber su tipo: ")
@@ -89,4 +89,31 @@ def episodiosCantidad():
 def menu():
     print("Series y Peliculas Animes: ")
     print("1- Obetener el tipo de un Anime.")
-    print("2- .") 
+    print("2- Obtener la sinopsis de un Anime.") 
+    print("3- Obetener el tipo de un Anime.")
+    print("4- Introduce una Anime para obtener la imgen de su cartelera.")
+    print("5- Introduce una Anime para obtener cuantos episodios tiene.")
+    print("6- Salir.")
+    
+while True: 
+    menu()
+    opcion= int(input("Introduce una opción: "))
+    if opcion==1:
+        tipo()
+        input("Introduce cualquier letra para continuar:")
+    elif opcion==2:
+        sinopsis()
+        input("Introduce cualquier letra para continuar:")
+    elif opcion==3:
+        puntos()
+        input("Introduce cualquier letra para continuar:")
+    elif opcion==4:
+        imagen()
+        input("Introduce cualquier letra para continuar:")
+    elif opcion==5:
+        episodiosCantidad()
+        input("Introduce cualquier letra para continuar:")
+    elif opcion==6:
+        break
+
+
