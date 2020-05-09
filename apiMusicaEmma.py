@@ -2,6 +2,7 @@ import json
 import requests
 import os
 
+#https://jikan.moe/
 try:
     def tipo():
         buscarAnime= input("Introduce el nombre de un Anime: ")
@@ -65,7 +66,7 @@ try:
             #lista
             consultaAnime= anime[0]
             resultadoConsulta= consultaAnime['image_url']
-            print("La url de la cartelera de %s es: "%buscarAnime)
+            print("\nLa url de la cartelera de %s es: "%buscarAnime)
             print(resultadoConsulta)
 
     def episodiosCantidad():
@@ -81,7 +82,7 @@ try:
             #lista
             consultaAnime= anime[0]
             resultadoConsulta= consultaAnime['episodes']
-            print("%s tiene: %s episodios"%(buscarAnime,resultadoConsulta))
+            print("\n%s tiene: %s episodios"%(buscarAnime,resultadoConsulta))
 
     def menu():
         os.system('cls')
@@ -92,10 +93,11 @@ try:
         print("4- Introduce una Anime para obtener la imgen de su cartelera.")
         print("5- Introduce una Anime para obtener cuantos episodios tiene.")
         print("6- Salir.")
+        print("\nEjemplos de animes que buscar: Naruto, Kimi no Na wa, Tokyo Ghoul....")
         
     while True: 
         menu()
-        opcion= int(input("Introduce una opción: "))
+        opcion= int(input("\nIntroduce una opción: "))
         if opcion==1:
             tipo()
             input("Introduce cualquier letra para continuar:")
@@ -115,5 +117,7 @@ try:
             break
 except ValueError:
     print("Error, porfavor intentelo de nuevo")
+except Exception as e: # 
+    print("Ha ocurrido un error no previsto", type(e).__name__ )
 
 
