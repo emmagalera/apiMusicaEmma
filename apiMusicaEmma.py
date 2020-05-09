@@ -10,30 +10,83 @@ import os
 
 # https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/
 
-def tipoPelicula():
-    buscarPelicula= input("Introduce una pelicula para saber su tipo: ")
+def tipo():
+    buscarAnime= input("Introduce una pelicula para saber su tipo: ")
     #Kimi no Na wa
-    apiPeli= "https://api.jikan.moe/v3/search/anime?q=%s&limit=16"%buscarPelicula
-    resp= requests.get(apiPeli) #para hacer solicitudes a HTTP
+    apiAnime= "https://api.jikan.moe/v3/search/anime?q=%s&limit=16"%buscarAnime
+    resp= requests.get(apiAnime) #para hacer solicitudes a HTTP
     #json.loads () espera una cadena JSON (válida)
     #mientras que json.load () espera un archivo (objeto de archivo)
-    peliculas= json.loads(resp.content)
-    pelicula= peliculas.get('results')
-    encontrarP= pelicula[0]
-    tipoPelicula= encontrarP['type']
-    print(tipoPelicula)
+    animes= json.loads(resp.content)
+    #diccionario
+    anime= animes.get('results')
+    #lista
+    consultaAnime= anime[0]
+    resultadoConsulta= consultaAnime['type']
+    print(resultadoConsulta)
 
-def sinopsisPelicula():
-    buscarPelicula= input("Introduce una pelicula para obtener su sinopsis: ")
-    apiPeli= "https://api.jikan.moe/v3/search/anime?q=%s&limit=16"%buscarPelicula
-    resp= requests.get(apiPeli) #para hacer solicitudes a HTTP
+def sinopsis():
+    buscarAnime= input("Introduce una pelicula para saber su tipo: ")
+    #Kimi no Na wa
+    apiAnime= "https://api.jikan.moe/v3/search/anime?q=%s&limit=16"%buscarAnime
+    resp= requests.get(apiAnime) #para hacer solicitudes a HTTP
     #json.loads () espera una cadena JSON (válida)
     #mientras que json.load () espera un archivo (objeto de archivo)
-    peliculas= json.loads(resp.content)
-    pelicula= peliculas.get('results')
-    encontrarP= pelicula[0]
-    sinopsisPelicula= encontrarP['synopsis']
-    print(sinopsisPelicula)
+    animes= json.loads(resp.content)
+    #diccionario
+    anime= animes.get('results')
+    #lista
+    consultaAnime= anime[0]
+    resultadoConsulta= consultaAnime['synopsis']
+    print(resultadoConsulta)
 
 
-sinopsisPelicula()
+def puntos():
+    buscarAnime= input("Introduce una pelicula para saber su tipo: ")
+    #Kimi no Na wa
+    apiAnime= "https://api.jikan.moe/v3/search/anime?q=%s&limit=16"%buscarAnime
+    resp= requests.get(apiAnime) #para hacer solicitudes a HTTP
+    #json.loads () espera una cadena JSON (válida)
+    #mientras que json.load () espera un archivo (objeto de archivo)
+    animes= json.loads(resp.content)
+    #diccionario
+    anime= animes.get('results')
+    #lista
+    consultaAnime= anime[0]
+    resultadoConsulta= consultaAnime['score']
+    print(resultadoConsulta)
+
+def imagen():
+    buscarAnime= input("Introduce una pelicula para saber su tipo: ")
+    #Kimi no Na wa
+    apiAnime= "https://api.jikan.moe/v3/search/anime?q=%s&limit=16"%buscarAnime
+    resp= requests.get(apiAnime) #para hacer solicitudes a HTTP
+    #json.loads () espera una cadena JSON (válida)
+    #mientras que json.load () espera un archivo (objeto de archivo)
+    animes= json.loads(resp.content)
+    #diccionario
+    anime= animes.get('results')
+    #lista
+    consultaAnime= anime[0]
+    resultadoConsulta= consultaAnime['image_url']
+    print(resultadoConsulta)
+
+def episodiosCantidad():
+    buscarAnime= input("Introduce una pelicula para saber su tipo: ")
+    #Kimi no Na wa
+    apiAnime= "https://api.jikan.moe/v3/search/anime?q=%s&limit=16"%buscarAnime
+    resp= requests.get(apiAnime) #para hacer solicitudes a HTTP
+    #json.loads () espera una cadena JSON (válida)
+    #mientras que json.load () espera un archivo (objeto de archivo)
+    animes= json.loads(resp.content)
+    #diccionario
+    anime= animes.get('results')
+    #lista
+    consultaAnime= anime[0]
+    resultadoConsulta= consultaAnime['episodes']
+    print(resultadoConsulta)
+
+def menu():
+    print("Series y Peliculas Animes: ")
+    print("1- Obetener el tipo de un Anime.")
+    print("2- .") 
